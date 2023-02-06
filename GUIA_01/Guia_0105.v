@@ -18,7 +18,7 @@ module Guia_0105;
     reg [0:9][7:0] str_a = "PUC-Minas"; // char array[9]
     reg [0:7][7:0] str_b = "02-2023"; // char array[7]
     reg [0:14][7:0] str_c = "Belo Horizonte"; //char array[14]
-    reg [0:6][7:0] ascii_oct = 48'o124141162144145;
+    reg [0:6][7:0] str_d;
     reg [0:6][7:0] ascii_hex = 48'h42726173696C; // char array[3] (3x8 bits - little Endian)
     
     // actions
@@ -52,8 +52,13 @@ module Guia_0105;
         end
 
         //imprime questao d
-        $display("ASCII_OCT: %o >> ASCII_BIN: %b\nASCII_SIMB: %s", ascii_oct, ascii_oct, ascii_oct, ascii_oct);
-        $fwrite(file_out, "\nASCII_OCT: %o >> ASCII_BIN: %b\nASCII_SIMB: %s", ascii_oct, ascii_oct, ascii_oct);
+        str_d[0] = 8'o124;
+        str_d[1] = 8'o141;
+        str_d[2] = 8'o162;
+        str_d[3] = 8'o144;
+        str_d[4] = 8'o145;
+        $display("ASCII_OCT: %o %o %o %o %o\nASCII_SIMB: %s", str_d[0], str_d[1], str_d[2], str_d[3], str_d[4], str_d);
+        $fwrite(file_out, "\nASCII_OCT: %o %o %o %o %o\nASCII_SIMB: %s", str_d[0], str_d[1], str_d[2], str_d[3], str_d[4], str_d);
 
         //imprime questao e
         $display("ASCII_HEX: %h\nASCII_SIMB: %s", ascii_hex, ascii_hex);
