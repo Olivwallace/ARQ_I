@@ -1,2 +1,6 @@
 #Ignorar todos os txt
 *.txt
+
+#Ignorar pasta
+/ArquiteturaI
+/NaoFinalizado
